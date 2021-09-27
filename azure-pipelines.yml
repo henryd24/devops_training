@@ -38,3 +38,9 @@ steps:
     Dockerfile: 'angularWorkSpace/Dockerfile'
     buildContext: 'angularWorkSpace/'
 
+- task: SendTelegramNotification@0
+  inputs:
+    botToken: $(tokenBotTelegram)
+    chats: $(idChat)
+    releaseName: true
+    releaseRequestedFor: true
