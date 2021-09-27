@@ -47,18 +47,3 @@ steps:
     releaseName: true
     releaseRequestedFor: true
   
-- task: ado-discord-webhook@1
-  inputs:
-    channelId: '$(IdWebHook)'
-    webhookKey: '$(webHookKey)'
-    name: 'AzurDev'
-    avatar: 'https://www.returngis.net/wp-content/uploads/2019/10/Azure-DevOps-Pipelines.png'
-    messageType: 'embeds'
-    embeds: |
-      [{
-          "title": "Test POST",
-          "Description": "Prueba"
-          "author":{
-              "name" : "NiggaMan"
-          }
-      }]
