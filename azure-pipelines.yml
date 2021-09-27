@@ -40,7 +40,18 @@ steps:
 
 - task: SendTelegramNotification@0
   inputs:
-    botToken: $(tokenBotTelegram)
-    chats: $(idChat)
+    botToken: '$(tokenBotTelegram)'
+    chats: '$(idChat)'
+    teamUrl: true
+    message: 'Pruebas, Pipeline'
     releaseName: true
     releaseRequestedFor: true
+  
+- task: ado-discord-webhook@1
+  inputs:
+    channelId: $(IdWebHook)
+    webhookKey: $(webHookKey)
+    name: 'AzurDev'
+    avatar: 'https://www.returngis.net/wp-content/uploads/2019/10/Azure-DevOps-Pipelines.png'
+    messageType: 'content'
+    content: 'Test'
